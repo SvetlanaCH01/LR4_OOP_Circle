@@ -17,4 +17,58 @@ namespace LR4_OOP
             InitializeComponent();
         }
     }
+    public class CCircle
+    {
+        private bool select;
+        private int x;
+        private int y;
+        private const int r = 30;
+        public CCircle()
+        {
+            y= x = 0;
+            select = false;
+        }
+        public CCircle(int _x, int _y)
+        {
+            x = _x;
+            y = _y;
+            select = false;
+        }
+        public bool Getselect()
+        {
+            return select;
+        }
+        public bool Border(int xS, int yS) // проверка попадания в круг 
+        {
+            bool bord = false;
+            int _x = Math.Abs(xS - x);
+            int _y = Math.Abs(yS - y);
+            if ((int)Math.Sqrt(_x*_x+_y*_y)<=r)
+            {
+                if (select == true)
+                {
+                    select = false;
+                }
+                else
+                {
+                    select = true;
+                }
+                bord = true;
+            }
+            return bord;
+        }
+        public void Draw(PaintEventArgs e) 
+        {
+            Pen Pen1 = new Pen(Brushes.DeepSkyBlue,2);
+            Pen Pen2 = new Pen(Brushes.Red,2);
+            if (select == true)
+            {
+                e.Graphics.DrawEllipse(Pen1, x-r, y-r, r * 2, r * 2);
+            }
+            else
+            {
+                e.Graphics.DrawEllipse(Pen2, x-r, y-r, r * 2, r * 2);
+            }
+        }
+    }
 }
