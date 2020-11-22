@@ -71,4 +71,26 @@ namespace LR4_OOP
             }
         }
     }
+    class Storage
+    {
+        CCircle[] Block;
+        int size;
+        int power;
+        int index;
+        public Storage()
+        {
+            index = 0;
+            size = 0;
+            power = 0;
+            Block = null;
+        }
+        public Storage(int power)
+        {
+            index = 0;
+            size = 0;
+            this.power = power;
+            Block = new CCircle[power];
+        }
+        
+    }
 }
