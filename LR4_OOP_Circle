@@ -122,5 +122,31 @@ namespace LR4_OOP
             Block[size] = null;
             size--;
         }
+        public int GetSize()
+        {
+            return size;
+        }
+        public int GetPower()
+        {
+            return power;
+        }
+        public void GetNext()
+        {
+            index++;
+        }
+        public void GetPrevious()
+        {
+            index--;
+        }
+        public void Get0()
+        {
+            index = 0;
+        }
+        public CCircle GetNow()
+        {
+            if (Block[index] != null)
+                return Block[index];
+            else return null;
+        }
     }
 }
