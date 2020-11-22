@@ -17,6 +17,15 @@ namespace LR4_OOP
         {
             InitializeComponent();
         }
+        private void PicBox_Paint(object sender, PaintEventArgs e)
+        {
+            for (int i = 0; i < Circle.GetSize(); i++)
+            {
+                Circle.GetNow().Draw(e);
+                Circle.GetNext();
+            }
+            Circle.Get0();
+        }
     }
     public class CCircle
     {
