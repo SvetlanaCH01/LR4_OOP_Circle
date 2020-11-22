@@ -26,6 +26,25 @@ namespace LR4_OOP
             }
             Circle.Get0();
         }
+        private void PicBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            int a = 0;
+            for (int i = 0; i < Circle.GetSize(); i++)
+            {
+                if (Circle.GetNow().Border(e.X, e.Y) == true)
+                {
+                    a++;
+                }
+                Circle.GetNext();
+            }
+            Circle.Get0();
+            if (a == 0)
+            {
+                CCircle Lap = new CCircle(e.X, e.Y);
+                Circle.Add(Lap);
+            }
+            PicBox.Refresh();
+        }
     }
     public class CCircle
     {
