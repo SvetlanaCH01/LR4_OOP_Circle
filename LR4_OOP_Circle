@@ -45,6 +45,25 @@ namespace LR4_OOP
             }
             PicBox.Refresh();
         }
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            int k = 0;
+            for (int i = 0; i < (Circle.GetSize()-1); i++)
+            {
+                Circle.GetNext();
+            }
+            for (int i = Circle.GetSize()-1; i>=0; i--)
+            {
+                if (Circle.GetNow().Getselect() == true)
+                {
+                    Circle.Delete(i);
+                }
+                Circle.GetPrevious();
+            }
+
+            Circle.Get0();
+            PicBox.Refresh();
+        }
     }
     public class CCircle
     {
