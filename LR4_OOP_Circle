@@ -12,6 +12,7 @@ namespace LR4_OOP
 {
     public partial class Form1 : Form
     {
+        Storage Circle = new Storage(50); 
         public Form1()
         {
             InitializeComponent();
@@ -91,6 +92,19 @@ namespace LR4_OOP
             this.power = power;
             Block = new CCircle[power];
         }
-        
+        ~Storage()
+        {
+            Console.Write("Destructor Storage \n");
+        }
+        public void ExpandBlock()//расширение массива
+        {
+            CCircle[] newBlock = Block;
+            Block = new CCircle[power * 2];
+            for (int i = 0; i < power; i++)
+            {
+                Block[i] = newBlock[i];
+            }
+            power = power * 2;
+        }
     }
 }
