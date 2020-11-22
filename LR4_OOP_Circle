@@ -106,5 +106,21 @@ namespace LR4_OOP
             }
             power = power * 2;
         }
+        public void Add(CCircle obj)//добавление
+        {
+            size++;
+            if (size == power)
+                ExpandBlock();
+            Block[size-1] = obj;
+        }
+        public void Delete(int a)//удаление 
+        {
+            for (int i = a; i < size - 1; i++)
+            {
+                Block[i] = Block[i + 1];
+            }
+            Block[size] = null;
+            size--;
+        }
     }
 }
