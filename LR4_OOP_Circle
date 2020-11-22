@@ -52,6 +52,19 @@ namespace LR4_OOP
             {
                 Circle.GetNext();
             }
+            for (int i = Circle.GetSize() - 1; i >= 0; i--)
+           {
+               if (Circle.GetNow().Getselect() == false)
+               {
+                   k++;
+               }
+           }
+           if (k == Circle.GetSize())
+           {
+               Circle.Delete(Circle.GetSize() - 1);
+               Circle.GetPrevious();
+
+           }
             for (int i = Circle.GetSize()-1; i>=0; i--)
             {
                 if (Circle.GetNow().Getselect() == true)
